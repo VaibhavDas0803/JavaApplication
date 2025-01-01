@@ -10,7 +10,7 @@ public class SeleniumTests {
 
     @Test
     public void testGetOneEmployees() {
-        // Automatically manage ChromeDriver for the current OS and specific browser version
+        // Automatically manage ChromeDriver for the current OS and specific browser version (131)
         WebDriverManager.chromedriver().browserVersion("131.0.6778.204").setup();
 
         // Set Chrome options to run headless
@@ -34,7 +34,7 @@ public class SeleniumTests {
 
     @Test
     public void testGetAllEmployees() {
-        // Automatically manage ChromeDriver for the current OS and specific browser version
+        // Automatically manage ChromeDriver for the current OS and specific browser version (131)
         WebDriverManager.chromedriver().browserVersion("131.0.6778.204").setup();
 
         // Set Chrome options to run headless
@@ -56,3 +56,4 @@ public class SeleniumTests {
         }
     }
 }
+
