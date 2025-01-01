@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class SeleniumTests {
 
@@ -11,7 +12,12 @@ public class SeleniumTests {
     public void testGetOneEmployees() {
         // Automatically manage ChromeDriver for the current OS and specific browser version
         WebDriverManager.chromedriver().browserVersion("131.0.6778.204").setup();
-        WebDriver driver = new ChromeDriver();
+
+        // Set Chrome options to run headless
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+
+        WebDriver driver = new ChromeDriver(options);
 
         try {
             // Access the application
@@ -30,7 +36,12 @@ public class SeleniumTests {
     public void testGetAllEmployees() {
         // Automatically manage ChromeDriver for the current OS and specific browser version
         WebDriverManager.chromedriver().browserVersion("131.0.6778.204").setup();
-        WebDriver driver = new ChromeDriver();
+
+        // Set Chrome options to run headless
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+
+        WebDriver driver = new ChromeDriver(options);
 
         try {
             // Access the application
