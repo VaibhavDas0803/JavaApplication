@@ -59,7 +59,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <!-- <version>4.25.0</version> Use the latest version -->
+            <version>4.25.0</version> Use the latest version -->
         </dependency>
 
         <dependency>
@@ -102,6 +102,12 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 
             </plugin>
+            <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.0.0-M8</version> <!-- Use the latest version -->
+            </plugin>
+
 
         </plugins>
     </build>
