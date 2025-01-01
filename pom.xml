@@ -83,6 +83,18 @@
             <artifactId>spring-boot-testcontainers</artifactId>
             <scope>test</scope>
         </dependency>
+         <dependency>
+             <groupId>org.apache.httpcomponents.client5</groupId>
+             <artifactId>httpclient5</artifactId>
+             <version>5.1</version> <!-- Make sure to use the appropriate version -->
+        </dependency>
+    
+    <!-- Apache HttpCore 5.x -->
+        <dependency>
+            <groupId>org.apache.httpcomponents.core5</groupId>
+            <artifactId>httpcore5</artifactId>
+            <version>5.1</version> <!-- Make sure to use the appropriate version -->
+       </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>junit-jupiter</artifactId>
