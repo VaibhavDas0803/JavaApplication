@@ -1,28 +1,14 @@
-# Use a Maven base image to build the application
-FROM maven:3.8.1-openjdk-11-slim AS build
+# Use the official OpenJDK base image
+FROM openjdk:21-jdk-slim AS build
 
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy the pom.xml and source code into the container
-COPY pom.xml .
-COPY src ./src
+# Copy the WAR file into the container
+COPY ./target/deployApp-0.0.1-SNAPSHOT.war /app/app.war
 
-# Set JAVA_HOME (if needed)
-ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+# Expose the port your application will run on
+EXPOSE 8083
 
-# Run Maven build with debug output
-RUN mvn clean install -X
-
-# Use a smaller JRE base image to run the app
-FROM openjdk:11-jre-slim
-
-# Set the working directory for the app
-WORKDIR /app
-
-# Copy the built jar file from the build stage
-COPY --from=build /app/target/java-application.jar /app/java-application.jar
-
-# Run the Java application
-CMD ["java", "-jar", "/app/java-application.jar"]
-
+# Command to run the WAR file
+ENTRYPOINT ["java", "-jar", "/app/app.war"]
